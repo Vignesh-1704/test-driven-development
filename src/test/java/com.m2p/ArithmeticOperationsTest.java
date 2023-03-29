@@ -3,47 +3,53 @@ package com.m2p;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ArithmeticOperationsTest{
     ArithmeticOperations arithmeticOperations = new ArithmeticOperations();
+
+    //Addition Test Cases
     @Test
-    void toReturnTenWhenSevenIsAddedtoThree()
+    void toReturnTenWhenSevenIsAddedToThree()
     {
         //Arrange
-        int expectedValue = 10;
+        int expectedSum = 10;
 
         //Act
-        int actualValue = arithmeticOperations.add(7,3);
+        int actualSum = arithmeticOperations.addition(7,3);
 
         //Assert
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedSum,actualSum);
     }
 
+    //Subtraction Test Cases
     @Test
-    void toReturnFiveWhenTwelveisSubtractedFromSeven()
+    void toReturnFiveWhenTwelveIsSubtractedFromSeven()
     {
         //Arrange
-        int expectedValue = 5;
+        int expectedDifference = 5;
 
         //Act
-        int actualValue = arithmeticOperations.sub(12,7);
+        int actualDifference = arithmeticOperations.subtract(12,7);
 
         //Assert
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedDifference,actualDifference);
     }
 
     @Test
     void toReturnNegativeFiveWhenSevenIsSubtractedFromTwelve()
     {
         //Arrange
-        int expectedValue = -5;
+        int expectedDifference = -5;
 
         //Act
-        int actualValue = arithmeticOperations.sub(7,12);
+        int actualDifference = arithmeticOperations.subtract(7,12);
 
         //Assert
-        assertEquals(expectedValue,actualValue);
+        assertEquals(expectedDifference,actualDifference);
     }
+
+    //Multiplication Test Cases
 
     @Test
     void toReturnSeventySevenWhenSevenIsMultipliedWithEleven()
@@ -52,46 +58,46 @@ class ArithmeticOperationsTest{
         int expectedValue = 77;
 
         //Act
-        int actualValue = arithmeticOperations.mul(7,11);
+        int actualValue = arithmeticOperations.multiply(7,11);
 
         //Assert
         assertEquals(expectedValue,actualValue);
     }
 
     @Test
-    void toReturnSeventySevenWhenNegativeSevenisMultipliedWithEleven()
+    void toReturnSeventySevenWhenNegativeSevenIsMultipliedWithEleven()
     {
         //Arrange
         int expectedValue = 77;
 
         //Act
-        int actualValue = arithmeticOperations.mul(-7,-11);
+        int actualValue = arithmeticOperations.multiply(-7,-11);
 
         //Assert
         assertEquals(expectedValue,actualValue);
     }
 
     @Test
-    void toReturnNegativeSeventySevenWhenNegativeSevenisMultipliedWithPositiveEleven()
+    void toReturnNegativeSeventySevenWhenNegativeSevenIsMultipliedWithPositiveEleven()
     {
         //Arrange
         int expectedValue = -77;
 
         //Act
-        int actualValue = arithmeticOperations.mul(-7,11);
+        int actualValue = arithmeticOperations.multiply(-7,11);
 
         //Assert
         assertEquals(expectedValue,actualValue);
     }
 
     @Test
-    void toReturnNegativeSeventySevenWhenPositiveSevenisMultipliedWithNegativeEleven()
+    void toReturnNegativeSeventySevenWhenPositiveSevenIsMultipliedWithNegativeEleven()
     {
         //Arrange
         int expectedValue = -77;
 
         //Act
-        int actualValue = arithmeticOperations.mul(7,-11);
+        int actualValue = arithmeticOperations.multiply(7,-11);
 
         //Assert
         assertEquals(expectedValue,actualValue);
@@ -104,9 +110,29 @@ class ArithmeticOperationsTest{
         int expectedValue = 0;
 
         //Act
-        int actualValue = arithmeticOperations.mul(7,0);
+        int actualValue = arithmeticOperations.multiply(7,0);
 
         //Assert
         assertEquals(expectedValue,actualValue);
+    }
+
+    //Division Test Cases
+    @Test
+    void toReturnFiveWhenTenIsDividedByTwo()
+    {
+        //Arrange
+        int expectedValue = 5;
+
+        //Act
+        int actualValue = arithmeticOperations.divide(10,2);
+
+        //Assert
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    void toReturnExceptionWhenDividedByZero()
+    {
+        assertThrows(ArithmeticException.class,()->arithmeticOperations.divide(3,0));
     }
 }
