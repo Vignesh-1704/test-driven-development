@@ -44,4 +44,69 @@ class ArithmeticOperationsTest{
         //Assert
         assertEquals(expectedValue,actualValue);
     }
+
+    @Test
+    void toReturnSeventySevenWhenSevenIsMultipliedWithEleven()
+    {
+        //Arrange
+        int expectedValue = 77;
+
+        //Act
+        int actualValue = arithmeticOperations.mul(7,11);
+
+        //Assert
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    void toReturnSeventySevenWhenNegativeSevenisMultipliedWithEleven()
+    {
+        //Arrange
+        int expectedValue = 77;
+
+        //Act
+        int actualValue = arithmeticOperations.mul(-7,-11);
+
+        //Assert
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    void toReturnNegativeSeventySevenWhenNegativeSevenisMultipliedWithPositiveEleven()
+    {
+        //Arrange
+        int expectedValue = -77;
+
+        //Act
+        int actualValue = arithmeticOperations.mul(-7,11);
+
+        //Assert
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    void toReturnNegativeSeventySevenWhenPositiveSevenisMultipliedWithNegativeEleven()
+    {
+        //Arrange
+        int expectedValue = -77;
+
+        //Act
+        int actualValue = arithmeticOperations.mul(7,-11);
+
+        //Assert
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    void toReturnZeroWhenSevenIsMultipliedWithZero()
+    {
+        //Arrange
+        int expectedValue = 0;
+
+        //Act
+        int actualValue = arithmeticOperations.mul(7,0);
+
+        //Assert
+        assertEquals(expectedValue,actualValue);
+    }
 }
